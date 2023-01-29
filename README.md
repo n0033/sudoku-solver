@@ -5,8 +5,8 @@
 - cabal
 
 ## Dependencies
-There are no libraries used for this project itself except for `Prelude`.
-However, the tests are using `hunit` library.
+There are no libraries used in this project itself except for `Prelude`.
+However, the tests are using `HUnit` library.
 
 ## Running
 `cabal install`  
