@@ -4,8 +4,20 @@
 - ghc
 - cabal
 
+## Dependencies
+There are no libraries used for this project itself except for `Prelude`.
+However, the tests are using `hunit` library.
+
 ## Running
+`cabal install`  
 `cabal run sudoku-solver ./test_cases`
+
+## Running tests
+
+Just a preview  
+
+`cabal configure --enable-tests && cabal build` (only once)
+`cabal test`
 
 ## How it works
 After parsing an input, the program constructs a double-nested

@@ -6,12 +6,25 @@ author:             nwyszkowski@gmail.com
 maintainer:         Norbert Wyszkowski
 build-type:         Simple
 extra-doc-files:    README.md
+
 common warnings
     ghc-options: -Wall -fllvm
+
 executable sudoku
     import:           warnings
     main-is:          Main.hs
-    build-depends:    base ^>=4.14.3.0, array ^>=0.5.4.0, 
+    build-depends:    base ^>=4.14.3.0, array ^>=0.5.4.0
     hs-source-dirs:   src src/DataTypes src/PivotChoice src/Prune src/Solve src/Utils src/Validators
     other-modules:    Common DataTypes Parsers Pivot Prints Prune Transformators Solve Validators
     default-language: Haskell2010
+    
+Test-Suite sudoku-tests 
+  type:                exitcode-stdio-1.0
+  main-is:             Test.hs
+  build-depends:       base,
+                       test-framework,
+                       test-framework-hunit,
+                       HUnit
+  hs-source-dirs:      test test/Utils src src/DataTypes src/PivotChoice src/Prune src/Solve src/Utils src/Validators
+  other-modules:       TestCommon Common DataTypes Parsers Pivot Prints Prune Transformators Solve Validators
+  default-language:    Haskell2010

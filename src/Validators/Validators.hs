@@ -12,6 +12,7 @@ isRowInvalid row = hasDuplicates fixed
   where
     fixed = [x | Fixed x <- row]
 
+-- checks rows, columns and blocks for duplicates
 isGridInvalid :: Grid -> Bool
 isGridInvalid grid = any isRowInvalid grid || any isRowInvalid transposed || any isRowInvalid blocks
   where
