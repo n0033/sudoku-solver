@@ -1,18 +1,11 @@
 module Prune where
 
+import Common (listsDiff, untilEqual)
 import DataTypes (Cell (Choice, Fixed), Grid)
 import Transformators (blocksToRows, transpose)
-import Until (untilEqual)
 
 getFixedElements :: [Cell] -> [Int]
 getFixedElements cells = [x | Fixed x <- cells]
-
--- removes every occurence of given element from list
-removeFromList :: Eq a => [a] -> a -> [a]
-removeFromList xs element = [x | x <- xs, x /= element]
-
-listsDiff :: Eq a => [a] -> [a] -> [a]
-listsDiff minuend subtrahend = filter (`notElem` subtrahend) minuend
 
 pruneCell :: Cell -> [Int] -> Maybe Cell
 pruneCell (Fixed cell) _ = Just (Fixed cell)

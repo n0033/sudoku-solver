@@ -1,10 +1,7 @@
-module Parsers (digitToInt, getNonZeroDigit, parseGrid, splitBy) where
+module Parsers (digitToInt, getNonZeroDigit, parseGrid) where
 
+import Common (splitBy)
 import DataTypes (Cell (Choice, Fixed), Grid)
-
-splitBy :: Int -> [a] -> [[a]]
-splitBy _ [] = []
-splitBy n xs = take n xs : splitBy n (drop n xs)
 
 getNonZeroDigit :: Int -> Maybe Int
 getNonZeroDigit n = if n > 0 && n < 10 then Just n else Nothing

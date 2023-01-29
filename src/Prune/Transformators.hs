@@ -1,6 +1,6 @@
 module Transformators where
 
-import Parsers (splitBy)
+import Common (splitBy)
 
 transpose :: [[a]] -> [[a]]
 transpose [] = []
