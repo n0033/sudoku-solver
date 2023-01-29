@@ -8,10 +8,9 @@ isGridFilled :: Grid -> Bool
 isGridFilled grid = null [x | Choice x <- concat grid]
 
 isRowInvalid :: [Cell] -> Bool
-isRowInvalid row = hasDuplicates fixed || not (null emptyChoices)
+isRowInvalid row = hasDuplicates fixed
   where
     fixed = [x | Fixed x <- row]
-    emptyChoices = [x | Choice x <- row, null x]
 
 isGridInvalid :: Grid -> Bool
 isGridInvalid grid = any isRowInvalid grid || any isRowInvalid transposed || any isRowInvalid blocks
