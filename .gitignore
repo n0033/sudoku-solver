@@ -2,3 +2,8 @@
 
 # vscode
 .vscode/*
+
+# cabal build artifacts
+dist-newstyle/*
+
+cabal.project.local
